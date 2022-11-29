@@ -18,7 +18,7 @@
 --
 -- Table structure for table `audiences`
 --base datos servidor laravel forge
--- use dbs6216243;
+--
 
 use cursos_online;
 
