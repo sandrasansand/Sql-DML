@@ -1,0 +1,65 @@
+CREATE DATABASE GaleriaArte DEFAULT CHARACTER SET UTF8 DEFAULT COLLATE
+UTF8_GENERAL_CI;
+USE GaleriaArte;
+
+CREATE TABLE Artista(
+CodArtista INT PRIMARY KEY,
+NomArtista VARCHAR(50) NOT NULL,
+DescArtista VARCHAR(250),
+Epoca VARCHAR(250) NOT NULL,
+F_Nacimiento DATE,
+F_Muerte DATE,
+Pais VARCHAR(50));
+
+CREATE TABLE Coleccion(
+NomColeccion VARCHAR(100) PRIMARY KEY,
+DescColeccion VARCHAR(22) NOT NULL,
+Direccion VARCHAR(150) NOT NULL,
+Pais VARCHAR(50),
+Telefono VARCHAR(15),
+Perrsona_contacto VARCHAR(50),
+Tipo ENUM('PÚBLICA','PRIVADA'));
+
+CREATE TABLE ColeccionPermanente(
+CodColecPerm VARCHAR(200) PRIMARY KEY,
+F_Inauguracion DATE NOT NULL,
+Precio DECIMAL(9,2) NOT NULL);
+
+CREATE TABLE ObjetoArte(
+CodObjeto INT PRIMARY KEY,
+Titulo VARCHAR(150) NOT NULL,
+Año INT,
+DescObjeto VARCHAR(250),
+Origen VARCHAR(250),
+Epoca VARCHAR(250),
+Estilo VARCHAR(250),
+Tipo ENUM('ESTATUA','CUADRO','OTRO') NOT NULL,
+Material VARCHAR(250),
+Altura DECIMAL(5,2),
+Peso DECIMAL(7,2),
+Tecnia VARCHAR(250),
+CodColecPerm VARCHAR(200),
+CONSTRAINT fk_objetoarte_colecperm FOREIGN KEY (CodColecPerm)
+REFERENCES ColeccionPermanente(CodColecPerm) ON DELETE NO ACTION ON UPDATE CASCADE);
+
+CREATE TABLE Realiza(
+CodArtista INT,
+CodObjeto INT,
+PRIMARY KEY(CodArtista,CodObjeto),
+CONSTRAINT fk_realiza_artista FOREIGN KEY (CodArtista) REFERENCES Artista (CodArtista) ON DELETE
+RESTRICT ON UPDATE CASCADE,
+CONSTRAINT fk_realiza_objetoarte FOREIGN KEY (CodObjeto) REFERENCES ObjetoArte (CodObjeto) ON
+DELETE RESTRICT ON UPDATE CASCADE);
+
+CREATE TABLE Prestada(
+CodObjeto INT,
+NomColeccion VARCHAR(100),
+F_Prestamo DATE,
+F_Devolucion DATE,
+PRIMARY KEY (CodObjeto,NomColeccion,F_Prestamo),
+CONSTRAINT fk_prestada_objetoarte FOREIGN KEY(CodObjeto)
+REFERENCES ObjetoArte(CodObjeto) ON DELETE RESTRICT ON UPDATE CASCADE,
+CONSTRAINT fk_prestada_coleccion FOREIGN KEY(NomColeccion)
+REFERENCES Coleccion(NomColeccion) ON DELETE RESTRICT ON UPDATE CASCADE);
+
+
