@@ -61,15 +61,15 @@ ON DELETE CASCADE;
 ALTER TABLE clasifica ADD CONSTRAINT clasifica_FK2 
 FOREIGN KEY (categoria) REFERENCES categoria (nombre);
 
-INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('1', 'ana', 'Ana L pez', 'ana@pp.com','2012/02/26 13:24:33');
-INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('2', 'bea', 'Bea L pez', 'bea@pp.com', '2012/02/17 13:25:04');
-INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('3', 'clara', 'Clara S nchez', 'clara@pp.com','2008/12/26 13:25:43');
-INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('4', 'delia', 'Delia S nchez', 'delia@pp.com', '2009/10/22 13:28:10');
-INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('5', 'emilia', 'Emilia S nchez', 'emilia@pp.com', '2007/10/22 09:26:17');
-INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('6', 'fatima', 'F tima L pez', 'fatima@pp.com', '2007/09/21 13:28:27');
-INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('7', 'gema', 'Gema Cos', 'gema@pp.com', '2011/12/22 13:28:35');
-INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('8', 'helena', 'Helena Cos', 'helena@pp.com', '2009/09/21 13:28:48');
-INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('9', 'ines', 'In s L pez', 'ines@pp.com', '2010/02/26 13:28:56');
+INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('1', 'antonio', 'Antonio López', 'antonio@gmail.com','2012/02/26 13:24:33');
+INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('2', 'bea', 'Bea López', 'bea@gmail.com', '2012/02/17 13:25:04');
+INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('3', 'clara', 'Clara Sánchez', 'clara@gmail.com','2008/12/26 13:25:43');
+INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('4', 'delia', 'Delia Sánchez', 'delia@gmail.com', '2009/10/22 13:28:10');
+INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('5', 'emilia', 'Emilia Sánchez', 'emilia@gmail.com', '2007/10/22 09:26:17');
+INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('6', 'josé', 'josé López', 'josé@gmail.com', '2007/09/21 13:28:27');
+INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('7', 'gema', 'Gema Coslada, 'gema@gmail.com', '2011/12/22 13:28:35');
+INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('8', 'helena', 'Helena Coslada', 'helena@gmail.com', '2009/09/21 13:28:48');
+INSERT INTO noticias.usuario (id, nombre, nombre_completo, email, fecha_registro) VALUES ('9', 'inés', 'Inés López', 'ines@gmail.com', '2010/02/26 13:28:56');
 
 INSERT INTO noticias.categoria (nombre) VALUES ('HARDWARE');
 INSERT INTO noticias.categoria (nombre) VALUES ('SOFTWARE');
